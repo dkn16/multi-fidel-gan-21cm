@@ -42,4 +42,4 @@ The training process has multiple arguments, while you can check the meaning of 
 
 We provided an example jupyter-notebook for evaluation, where you can see how do we generate our figures in our paper.
 
-**For more information, you can check the readme of the orginal repo, or open a issue, or contact me at dkn16@foxmail.com**
+**For more information, you can check the readme of the [orginal repo](https://github.com/utkarshojha/few-shot-gan-adaptation), or open a issue, or contact me at dkn16@foxmail.com**
