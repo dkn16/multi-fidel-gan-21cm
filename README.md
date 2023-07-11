@@ -18,7 +18,7 @@ The following is my enviroment, and newer versions should also be OK, though I d
 
 ## Training your own model
 
-Here is an simple instruction on how to apply this repo to your own multi-fidelity dataset. 
+Here is an simple instruction on how to apply this repo to your own multi-fidelity dataset. The first step would be train a stylegan 2 model based on [this repo](https://github.com/rosinality/stylegan2-pytorch) with low-fidelity images, then go to this repo and train the model here with your high-fidelity dataset.
 
 ### dataset
 
@@ -33,6 +33,8 @@ Our example can be found in `run.sh`.
 ### model
 
 Our model is constructed in model.py, in principle people do not need to care about most settings here, as they are adopted from the styleGAN2 architecture. One thing you may need to pay attention is the `ConstantInput` class. The output of `ConstantInput.forward` must have the same hidth-to-width ratio as your final desired output. For example, here in our code, is ratio is 1/2 because our desired lightcone image has a resolution of $(256,512)$.
+
+Another thing is the initialization of model: here in train.py we copyied the params of the first layer for four times to form a bigger first layer, as our high-fidelity images is four times larger than the low-fidelity images. If your high-fidel and low-fidel images have different sizes, you should also initialize your model params carefully, instead of just read an low-fidel GAN model in.
 
 ### training
 
